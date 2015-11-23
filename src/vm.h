@@ -4,9 +4,10 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "types.h"
+#include "vmstate.h"
 
-void vm_init(VMState* vm, FILE* code);
-int vm_run(VMState* vm);
-void vm_executeNext(VMState* vm);
+void vm_init(VMState*, FILE*);
+int vm_run(VMState*);
+void vm_executeNext(VMState*, Instruction);
 
 #endif /* VM_H_ */
