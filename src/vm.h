@@ -3,13 +3,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
-
-typedef struct
-{
-	FILE* code;
-	uint8_t running;
-	uint8_t error;
-} VMState;
+#include "types.h"
 
 void vm_init(VMState* vm, FILE* code);
 int vm_run(VMState* vm);

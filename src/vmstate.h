@@ -18,6 +18,8 @@ typedef struct {
 	FilePtr File; /* Input file */
 	PC PC; /* Program counter */
 	OpStack Stack[STACK_SIZE]; /* Global stack */
+	uint8_t IsRunning;
+	uint8_t Error;
 } VMState;
 
 #endif /* VMSTATE_H_ */
