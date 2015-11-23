@@ -11,12 +11,13 @@
 #include <stdint.h>
 
 /* Claw types */
-typedef int16_t var; /* Variable */
-typedef int8_t* array; /* Array pointer */
+typedef int16_t ClawNumber; /* Variable */
+typedef int8_t* ClawArray; /* Array pointer */
 
 /* VM state variables */
-typedef FILE* filePtr;
-typedef uint32_t pc; /* Program counter pointer */
-typedef uint8_t instr; /*  */
+typedef FILE* FilePtr;
+typedef uint32_t PC; /* Program counter pointer */
+typedef uint8_t Instruction; /* Instruction */
+typedef ClawNumber OpStack[];
 
 #endif /* TYPES_H_ */
