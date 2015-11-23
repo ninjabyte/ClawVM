@@ -10,8 +10,21 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "vm.h"
 
-int main(void) {
-	puts("Hello World!"); /* prints Hello World! */
+int main(int argc, char *argv[]) {
+
+	if(argc < 2) {
+		fprintf(stderr, "No file specified!");
+		return EXIT_FAILURE;
+	}
+
+	FILE* code = fopen(argv[1], "r");
+	VMState vm;
+	vm_init(&vm, code);
+	vm_run(&vm);
+
+	fclose(code);
+
 	return EXIT_SUCCESS;
 }
