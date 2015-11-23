@@ -18,6 +18,6 @@ typedef struct {
 	filePtr file; /* Input file */
 	pc pc; /* Program counter */
 	var stack[STACK_SIZE]; /* Global stack */
-} vmstate_t;
+} vmState;
 
 #endif /* VMSTATE_H_ */
