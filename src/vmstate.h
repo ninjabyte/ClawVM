@@ -15,7 +15,7 @@
 #endif
 
 typedef struct {
-	file_t file; /* Input file */
+	fptr_t file; /* Input file */
 	pcptr_t pc; /* Program counter */
 	var_t stack[STACK_SIZE]; /* Global stack */
 } vmstate_t;
