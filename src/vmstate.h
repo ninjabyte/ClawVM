@@ -15,9 +15,9 @@
 #endif
 
 typedef struct {
-	fptr_t file; /* Input file */
-	pcptr_t pc; /* Program counter */
-	var_t stack[STACK_SIZE]; /* Global stack */
+	FilePtr file; /* Input file */
+	PC pc; /* Program counter */
+	Var stack[STACK_SIZE]; /* Global stack */
 } vmstate_t;
 
 #endif /* VMSTATE_H_ */

@@ -11,11 +11,11 @@
 #include <stdint.h>
 
 /* Claw types */
-typedef int16_t var_t; /* Variable */
-typedef int8_t* array_t; /* Array pointer */
+typedef int16_t Var; /* Variable */
+typedef int8_t* Array; /* Array pointer */
 
 /* VM state variables */
-typedef FILE* fptr_t;
-typedef int32_t pcptr_t; /* Program counter pointer */
+typedef FILE* FilePtr;
+typedef int32_t PC; /* Program counter pointer */
 
 #endif /* TYPES_H_ */
