@@ -1,10 +1,10 @@
 /*
  ============================================================================
- Name        : ClawVM.c
+ Name        : main.c
  Author      : ninjabyte electronics
  Version     :
  Copyright   : (c) 2015 ninjabyte electronics
- Description : Hello World in C, Ansi-style
+ Description : ClawVM
  ============================================================================
  */
 
