@@ -25,12 +25,13 @@ int vm_run(VMState* vm)
 /* execute the next instruction */
 void vm_executeNext(VMState* vm, Instruction instr)
 {
-	switch(instr)
-	{
+	switch(instr) {
 		case IN_NOP:
 			break;
 		case IN_HCF:
 			vm->Error = ERR_ON_FIRE;
 			break;
+		default:
+
 	}
 }
