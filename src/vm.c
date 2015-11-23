@@ -22,7 +22,7 @@ int vm_run(VMState* vm)
 	return vm->Error;
 }
 
-/* execute the next instrution */
+/* execute the next instruction */
 void vm_executeNext(VMState* vm, Instruction instr)
 {
 	switch(instr)
