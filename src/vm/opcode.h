@@ -5,10 +5,12 @@
  *      Author: Benedikt
  */
 
-#ifndef BC_BYTECODE_H_
-#define BC_BYTECODE_H_
+#ifndef BC_OPCODE_H_
+#define BC_OPCODE_H_
 
-typedef enum {
+#include <stdint.h>
+
+enum Opcode{
 	IN_NOP = 0x00,	 /* Do nothing. */
 	IN_ADD = 0x01,	 /* Pops $0 and $1. Pushes $1   $0. */
 	IN_SUB = 0x02,	 /* Pops $0 and $1. Pushes $1 - $0. */
@@ -56,6 +58,8 @@ typedef enum {
 	IN_BSR = 0x30,	 /* Pops $0 and $1. Pushes $1 >> $0. This is a bitwise function. */
 	IN_INC = 0x32,	 /* Pops $0. Pushes $0   1. */
 	IN_DEC = 0x33	 /* Pops $0. Pushes $0 - 1. */
-} Instruction;
+};
 
-#endif /* BC_BYTECODE_H_ */
+typedef uint8_t opcode_t;
+
+#endif /* BC_OPCODE_H_ */

@@ -9,6 +9,7 @@
 #define VMSTATE_H_
 
 #include "types.h"
+#include <stdint.h>
 
 #ifndef STACK_SIZE
 #define STACK_SIZE 512
@@ -17,7 +18,7 @@
 typedef struct {
 	FilePtr File; /* Input file */
 	PC PC; /* Program counter */
-	OpStack Stack[STACK_SIZE]; /* Global stack */
+//	OpStack Stack[STACK_SIZE]; /* Global stack */
 	uint8_t IsRunning;
 	uint8_t Error;
 } VMState;

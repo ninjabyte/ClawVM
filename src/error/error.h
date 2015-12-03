@@ -1,12 +1,13 @@
 #ifndef ERROR_H_
 #define ERROR_H_
 
+#include <stdint.h>
+
 /* error code enum */
 enum Error
 {
 	ERR_NO_ERROR,
 	ERR_INVALID_FILE,
-	ERR_ON_FIRE,
 	ERR_UNIMPLEMENTED_INSTR,
 
 	/* Runtime errors */
@@ -19,7 +20,6 @@ enum Error
 	NUM_ERRORS
 };
 
-void error_printmsg(int code);
-void error_printmsgln(int code, int line);
+void error_printmsg(uint8_t code);
 
 #endif /* ERROR_H_ */

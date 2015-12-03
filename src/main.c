@@ -10,7 +10,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "vm.h"
+#include "vm/vm.h"
+#include "error/error.h"
 
 int main(int argc, char *argv[]) {
 
@@ -20,9 +21,16 @@ int main(int argc, char *argv[]) {
 	}
 
 	FILE* code = fopen(argv[1], "r");
+	if (!code) {
+		fprintf(stderr, "Invalid file!");
+		return EXIT_FAILURE;
+	}
+
 	VMState vm;
 	vm_init(&vm, code);
-	vm_run(&vm);
+	int errcode = vm_run(&vm);
+	if (errcode)
+		error_printmsg(errcode);
 
 	fclose(code);
 
