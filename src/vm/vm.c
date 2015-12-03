@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "vm.h"
-#include "opcode.h"
-#include "../error/error.h"
+#include "opcodes.h"
+#include "error/error.h"
+#include "mem/stack.h"
 
 void vm_error(VMState* vm, uint8_t error);
 uint8_t vm_fetchByte(VMState* vm);
@@ -12,6 +13,7 @@ void vm_init(VMState* vm, FILE* file)
 	vm->code = file;
 	vm->state = STATE_IDLE;
 	vm->errorCode = ERR_NO_ERROR;
+	stack_create(&vm->stack, 32);
 }
 
 /* set the vm to an error state */

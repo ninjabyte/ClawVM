@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "vm/vm.h"
-#include "error/error.h"
+#include "vm/error/error.h"
 
 int main(int argc, char *argv[]) {
 

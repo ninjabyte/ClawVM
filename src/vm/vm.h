@@ -3,11 +3,8 @@
 
 #include <stdio.h>
 #include <stdint.h>
-#include "opcode.h"
-
-#ifndef STACK_SIZE
-#define STACK_SIZE 512
-#endif
+#include "opcodes.h"
+#include "mem/stack.h"
 
 #define STATE_IDLE 0
 #define STATE_RUNNING 1
@@ -20,6 +17,8 @@ typedef struct {
 	uint32_t pc; /* Program counter */
 	uint8_t state; /* State of the virtual machine */
 	uint8_t errorCode; /* Error code, if any */
+
+	stack_t stack;
 
 	/* TODO Environment variable for native functions */
 } VMState;
