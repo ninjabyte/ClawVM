@@ -5,7 +5,7 @@
 #include "mem/stack.h"
 
 void vm_error(VMState* vm, uint8_t error);
-uint8_t vm_fetchByte(VMState* vm);
+uint8_t vm_fetch(VMState* vm);
 
 /* initialize a virtual machine */
 void vm_init(VMState* vm, FILE* file)
@@ -24,7 +24,7 @@ void vm_error(VMState* vm, uint8_t error)
 }
 
 /* fetch the next byte */
-uint8_t vm_fetchByte(VMState* vm)
+uint8_t vm_fetch(VMState* vm)
 {
 	int data = fgetc(vm->code);
 	if (data == EOF)
@@ -40,11 +40,11 @@ uint8_t vm_fetchByte(VMState* vm)
 int vm_run(VMState* vm)
 {
 	vm->state = STATE_RUNNING;
-	opcode_t instr = (opcode_t) vm_fetchByte(vm);
+	opcode_t instr = (opcode_t) vm_fetch(vm);
 	while (vm->state == STATE_RUNNING)
 	{
 		vm_executeNext(vm, instr);
-		instr = (opcode_t) vm_fetchByte(vm);
+		instr = (opcode_t) vm_fetch(vm);
 	}
 
 	return vm->errorCode;
@@ -55,6 +55,7 @@ void vm_executeNext(VMState* vm, opcode_t instr)
 {
 	switch(instr) {
 		case IN_NOP:
+			printf("nop\n");
 			break;
 		default:
 			break;
