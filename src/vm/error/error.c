@@ -11,6 +11,7 @@ const char* error_messages[] =
 
 	/* Runtime errors */
 	"Divide by zero",
+	"Empty stack",
 	"Variable is of invalid type",
 	"Variable is invalid or does not exist",
 	"Jump out of bounds"

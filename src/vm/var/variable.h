@@ -1,21 +1,11 @@
-#ifndef OBJECT_H_
-#define OBJECT_H_
+#ifndef VARIABLE_H_
+#define VARIABLE_H_
 
-#include "array.h"
-#include "number.h"
-
-#define TYPE_NUMBER 0
-#define TYPE_ARRAY 1
-
-Claw_Number;
-Claw_Array;
+#include <stdint.h>
 
 typedef struct {
-	uint8_t type;
-	union {
-		Claw_Number data_number;
-		Claw_Array data_array;
-	};
-} Claw_Data;
+	uint16_t id;
+	void* value;
+} Claw_Variable;
 
-#endif /* OBJECT_H_ */
+#endif /* VARIABLE_H_ */

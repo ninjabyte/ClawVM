@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 	int errcode = vm_run(&vm);
 	if (errcode)
 		error_printmsg(errcode);
-
+	vm_destroy(&vm);
 	fclose(code);
 
 	return EXIT_SUCCESS;
